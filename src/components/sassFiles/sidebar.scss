@@ -1,0 +1,131 @@
+.sidebar_inner{
+    
+    box-sizing: border-box !important;
+    min-height: calc(100vh - 50px);
+    background-color: var(--my-bg-color-primery) ;
+    border-right: 1px solid rgba(0, 0,0, 0.1);
+    margin-top: -1px !important;
+    padding-right: 20px !important;
+    margin-top: 5px !important;
+    position: fixed !important;
+} 
+.side_link {
+    display: block !important;
+    height: 50px;
+    color: var(--my-normal-text-color) !important;
+    text-decoration: none !important;
+    /* background-color: rgba(0,0,0,.1); */
+    margin: 1px 0;
+    border-radius: 0px 30px 30px 0px ;
+    cursor: pointer;
+    padding: 5px 15px;line-height: 40px;
+
+}
+.side_link:hover{
+    background-color: rgba(0, 0,0, 0.1) !important;
+   
+}
+.arrows{
+    display: none;
+    float: right;
+    margin-right: -50px;
+    width: 30px;
+    height: 30px;
+   overflow: hidden;
+   background-color: var(--my-element-bg);
+   text-align: center;
+   line-height: 30px;
+   cursor: pointer;
+   color: #fff;
+   border-radius: 0 15px 15px 0;
+   padding: 2px;
+   padding-top: 0;
+}
+
+.active{
+    background-color: var(--my-element-bg) !important;
+    color: #fff !important;
+    /* transition: 0.5s; */
+}
+.active:hover{
+    background-color: var(--my-element-bg) !important;
+    color: #fff !important;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+
+@media screen and (max-width: 1200px){
+    .sidebar_inner{
+        /* display: none; */
+        z-index: 1000;
+        width: 17%;
+        margin-left: -17%;
+        
+  
+  
+    }
+    .arrows{
+        display: block;
+    }
+    .side_hide_active{
+        margin-left: 0;
+      }
+      .side_hide{
+        margin-left: -17%;
+    }
+    .main_row{
+     
+      grid-template-columns: 100%;
+      
+    }
+  }
+  @media screen and (max-width: 992px){
+    .sidebar_inner{
+        width: 20%;
+        margin-left: -20%;
+        font-size: 18px;
+       font-weight: bold;
+    }
+    .arrows{
+        display: block;
+    }
+    .side_hide_active{
+        margin-left: 0;
+      }
+      .side_hide{
+        margin-left: -20%;
+    }
+  }
+
+
+  @media screen and (max-width: 762px){
+    .sidebar_inner{
+        width: 35%;
+        margin-left: -35%;
+        font-size: 16px;
+       
+    }
+    .arrows{
+        display: block;
+    }
+    .side_hide_active{
+        margin-left: 0;
+      }
+      .side_hide{
+        margin-left: -35%;
+    }
+  }
+
+
+
+  @media screen and (min-width: 1200px){
+   
+    .arrows{
+        display: none;
+    }
+    
+  }

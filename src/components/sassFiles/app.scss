@@ -1,0 +1,104 @@
+:root{
+  
+    --my-element-bg : #9055FD;
+    --my-second-color: #50B30B; 
+    --my-therd-color:#FFB400;
+    --my-danger-color:#EA4850;
+    --my-primary-color: #16B1FF;
+    --my-body-bg :  rgba(0, 0,0, 0.1);
+  
+  }
+  [data-theme="dark"]{
+    --my-bg-color-primery : #28243D;
+    --my-bg-color-secondery:#312D4B;
+    --my-normal-text-color:#CFCBE5;
+    --my-text-color-light:#9E9AB5;
+    --my-purpel-active:#403367;
+    
+  }
+  [data-theme="light"]{
+    --my-bg-color-primery : #F4F5FA;
+    /* --my-bg-color-primery: rgba(0,0,0,.1); */
+    --my-bg-color-secondery:#FFFFFF;
+    --my-normal-text-color: #544F5A;
+    --my-text-color-light:#89868D;
+    --my-purpel-active:#403367;
+  }
+  .navbar{
+    background-color: var(--my-element-bg) !important;
+    color: #fff !important;
+  
+  }
+  .navbar .nav-link{
+    color:#fff;
+  }
+  
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  *::after{
+    box-sizing: border-box !important;
+  }
+  *::before{
+    box-sizing: border-box !important;
+  }
+  body{
+    background-color: var(--my-body-bg) !important;
+   color: var(--my-text-color-light) !important;
+  }
+  h1,h2,h3,h4,h5{
+    color:var(--my-normal-text-color) !important;
+  }
+  
+  .brand{
+    background-color: var() !important;
+    /* color: var(--my-active-and-btn-color) !important; */
+    color:var(--my-active-and-btn-color) !important;
+    text-decoration: underline !important;
+  }
+  
+  .main_row{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 17% 82%;
+    background-color: var(--my-bg-color-primery) !important;
+    padding-top: 60px !important;
+    overflow:  hidden !important;
+    
+  }
+  .row{
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  // .col-lg-6{
+   
+  // }
+  .col,
+      [class*="col-"] {
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+      }
+  
+    .shadow{
+      box-shadow: 5px 5px 5px 5px rgba(0,0,0,.1) !important;
+    }
+    .danger_color{
+      color: var(--my-danger-color) !important;
+    }
+    .small,small {
+      font-size: .400em !important;
+  }
+
+  @media screen and (max-width: 1200px){
+    .main_col{
+      margin-left: 20px;
+      // width: 100% !important;
+      width: calc(100% - 17px) !important;
+
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+    }
+  }

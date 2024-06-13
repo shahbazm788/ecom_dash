@@ -1,0 +1,19 @@
+.charts_data{
+    padding: 0% !important;
+    margin: 0 !important;
+    margin-top: 20px !important;
+    width: 95% !important;
+    
+   
+}
+.uniqu_visetor,.reache{
+    background-color: var(--my-bg-color-secondery ) !important;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    color: var(--my-element-bg) !important;
+}
+.reache > h6 {
+    color: var(--my-danger-color) !important;
+}

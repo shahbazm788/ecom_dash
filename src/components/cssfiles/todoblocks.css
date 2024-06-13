@@ -1,0 +1,112 @@
+.todo_bloks{
+    margin: 20px 0;
+    box-sizing: border-box !important;
+}
+.todo_outer{
+    background-color: var(--my-bg-color-secondery) !important;
+    border-radius: 5px;
+    padding: 8px !important;
+    min-height: 600px;
+
+    max-height: 600px;
+    overflow: hidden !important;
+    
+}
+.todo_outer > h6{
+    color: var(--my-element-bg) !important;
+    text-align: center;
+    margin-top: 30px;
+  
+}
+.add_todo{
+    margin: 5px 15px;
+}
+.add_todo > input,button{
+   border: none;
+    outline: none;
+
+}
+.add_todo > input{
+    margin-left: 40px;
+    padding: 2px 8px;
+    width: 250px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-right: none;
+    
+}
+.add_todo > button {
+    padding: 2px 8px;
+    background-color: var(--my-element-bg);
+    color: var(--my-bg-color-secondery);
+    border-radius: 0 20px 20px 0;
+    border: 1px solid var(--my-element-bg) !important;
+   
+}
+.todo_item{
+    list-style-type: none;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: calc(100% - 50px) 50px;
+    overflow: hidden;
+    margin: 20px 0 !important;
+}
+.del_icon{
+    cursor: pointer;
+}
+
+/* start styling for whear */
+.weather_outer{
+    margin:  0 15px;
+    background-color: var(--my-bg-color-secondery);
+    padding: 25px !important;
+    border-radius: 5px;
+    min-height: 600px;
+    max-height: 600px;
+}
+.weather_outer > h6{
+    color: var(--my-element-bg) !important;
+    text-align: center;
+    text-decoration: underline;
+}
+.todo_item_outer{
+    max-height: 350px;
+    overflow-y: scroll;
+}
+.wetar_icon_plus_heading,.city{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+}
+.time{
+    text-align: right;
+}
+.tempreture{
+    margin-top: 30px;
+    text-align: center;
+   
+}
+.deg{
+    font-size: 100px;
+    color: var(--my-element-bg) !important;
+    margin-bottom: 0;
+}
+
+.weather_icon{
+ width: 200px;
+ height: 200px;
+}
+.celsius_Icon{
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+.feel_like {
+
+}
+.feel_like > img{
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
