@@ -12,7 +12,8 @@ import InfoBlocks from "./InfoBlocks";
 import ChartsData from "./ChartsData";
 import ToDo from "./ToDo";
 import ToDoBlocks from "./ToDoBlocks";
-
+import {useSelector,useDispatch} from 'react-redux';
+import {addToProducts,getProducts} from '../../redux/slices/products_slice.js';
 
 
 
@@ -23,7 +24,8 @@ const Home = () => {
     const data = useLocation();
     const [cookies, removeCookie] = useCookies([]);
    
-    
+    const dispatch = useDispatch();
+const products = useSelector(state => state.products.products);
  useEffect( () => {
 
     if (!cookies.jwt) {

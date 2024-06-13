@@ -41,13 +41,13 @@ const Sidebar = () => {
       <Link className='side_link'  onClick={showRightArow}><FaHome /> Home</Link>
     </LinkContainer>
     <LinkContainer to="/posts" >
-      <Link className='side_link' onClick={showRightArow}><FaFileAlt /> Posts</Link>
+      <Link className='side_link' onClick={showRightArow}><FaFileAlt /> Products </Link>
     </LinkContainer>
     <LinkContainer to="/users" >
       <Link className='side_link' onClick={showRightArow}><FaUsers /> Users</Link>
     </LinkContainer>
     <LinkContainer to="/addpost" >
-      <Link className='side_link' onClick={showRightArow}><FaFileSignature /> Add Post</Link>
+      <Link className='side_link' onClick={showRightArow}><FaFileSignature /> Add Product</Link>
     </LinkContainer>
     {/* <LinkContainer to="/sendpost" >
       <Link className='side_link' onClick={showRightArow}><FaFileSignature /> Send Post</Link>
