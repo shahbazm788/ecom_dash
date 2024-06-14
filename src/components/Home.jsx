@@ -28,15 +28,15 @@ const Home = () => {
 const products = useSelector(state => state.products.products);
  useEffect( () => {
 
-    if (!cookies.jwt) {
-      nevigate("/login");
-    }
-   else{
-         fetch("http://localhost:5000/user",{
-          credentials: "include"
-         }).then(res => res.json()).then(data => console.log(data))
-        // console.log(cookies)
- }
+//     if (!cookies.jwt) {
+//       nevigate("/login");
+//     }
+//    else{
+//          fetch("http://localhost:5000/user",{
+//           credentials: "include"
+//          }).then(res => res.json()).then(data => console.log(data))
+//         // console.log(cookies)
+//  }
  },[]);
 
 

@@ -1,0 +1,42 @@
+  "proxy": "http://localhost:5000",
+
+ const [editorval , setEditorval] = useState();
+  const [file,setFile] = useState();
+  const [fData,setFdata] = useState({
+    heading:'',
+    files:null,
+    editorval:''
+  });
+
+
+<Form  onSubmit={(e) => handeleSubmit(e)} id='myForm'> 
+      <Form.Group controlId="">
+            <Form.Label>Add Post Heading</Form.Label>
+            <Form.Control type="text" placeholder="Add Post Heading..." name='post_heading' 
+            onChange={e => {
+              setFdata({...fData,heading:e.target.value})
+            }} 
+            />
+          </Form.Group>
+        <Form.Group controlId="">
+          {/* Form.Label, Form.Control, Form.Text, Form.Check, InputGroup, etc */}
+         
+          <Form.Label>Add Image</Form.Label>
+          <Form.Control type="file" name='file' onChange={(e) => setFile(e.target.files[0])} />
+        </Form.Group>
+        <Form.Group controlId="">
+          <Form.Label>Add Content</Form.Label>
+          <JoditEditor
+            ref={editor}
+            // config={config}
+            // onChange={content => setEditorval(content)}
+            onChange={content => {
+              setFdata({...fData,editorval:content})
+            }}
+            name="myContent"
+            />
+            <Button variant="primary" type='submit'>
+              Submit
+            </Button>
+        </Form.Group>
+      </Form>

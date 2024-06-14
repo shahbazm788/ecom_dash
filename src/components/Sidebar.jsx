@@ -47,6 +47,9 @@ const Sidebar = () => {
       <Link className='side_link' onClick={showRightArow}><FaUsers /> Users</Link>
     </LinkContainer>
     <LinkContainer to="/addpost" >
+      <Link className='side_link' onClick={showRightArow}><FaFileSignature /> Add Post</Link>
+    </LinkContainer>
+    <LinkContainer to="/addproduct" >
       <Link className='side_link' onClick={showRightArow}><FaFileSignature /> Add Product</Link>
     </LinkContainer>
     {/* <LinkContainer to="/sendpost" >

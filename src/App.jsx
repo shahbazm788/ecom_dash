@@ -17,7 +17,7 @@ import { useNavigate } from "react-router";
 import { useCookies } from "react-cookie";
 import Reguser from './components/reguser';
 // import { io } from 'socket.io-client';
-
+import AddProduct from './components/AddProduct.jsx';
 
 function App() {
  const [bg,setBg] = useState({theme:"light"});
@@ -54,6 +54,8 @@ useEffect(() => {
       <Route path="/posts" element={<Posts />} />
       <Route path="/users" element={<Users />} />
       <Route path="/addpost" element={<Addpost />} />
+      <Route path="/addproduct" element={<AddProduct />} />
+
       {/* <Route path="/sendPost" element={<SendPost />} /> */}
       <Route path="/editpost" element={<EditPost />} />
       
