@@ -32,7 +32,7 @@ const [cookies, removeCookie] = useCookies([]);
  const handelClick =  (e) => {
   e.preventDefault();
   const formData = new FormData();
-  formData.set("avatar",fileInput.current.value);
+  formData.set("avatar",fileInput.current.files[0]);
 
 
      fetch("http://localhost:5000/addpost",{
