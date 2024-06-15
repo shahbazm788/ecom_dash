@@ -63,9 +63,9 @@ withCredentials: true
  
 useEffect(() => {
   
-  if (!cookies.jwt) {
-    nevigate("/login");
-  }
+  // if (!cookies.jwt) {
+  //   nevigate("/login");
+  // }
   // else{
   //   console.log(cookies.jwt)
   // }
