@@ -17,7 +17,6 @@ const [cookies, removeCookie] = useCookies([]);
     title:'',
     category:'',
     sub_category:"",
-    files:null,
     editorval:'',
     supplier:"",
     price:"",
@@ -55,7 +54,7 @@ fd.append('file',file);
 
 
 
-axios.post('http://localhost:5000/addpost',fd,{
+axios.post('http://localhost:5000/products/create',fd,{
 //   onDownloadProgress: (ProgressEvent) => {console.log(ProgressEvent.progress*100)},
 //   headers:{
 //     "Custom-headers":"value"

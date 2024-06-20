@@ -15,7 +15,7 @@ const [userData,setUserData] = useState();
 const [file,setFile] = useState();
 
 
-const myUrl = "http://localhost:5000/reg";
+const myUrl = "http://localhost:5000/admin/create";
 const  handeleSubmit = (e) => {
   // e.preventDegfault();
   // alert('ok')
@@ -35,9 +35,9 @@ const  handeleSubmit = (e) => {
 }
 useEffect(() => {
   
-  if (cookies.jwt) {
+ /* if (cookies.jwt) {
     nevigate("/login");
-  }
+  }*/
   // else{
   //   console.log(cookies.jwt)
   // }

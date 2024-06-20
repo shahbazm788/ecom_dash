@@ -12,13 +12,14 @@ const [getdata,setGetData] = useState({});
 const nevigate = useNavigate();
 
   useEffect(() => {
-    if(cookies.jwt){
+   if(cookies.jwt){
       nevigate("/");
      
     }
+  
    
   },[]);
-
+const myUrl = "http://localhost:5000/admin/login";
 
   const [logindetail,setLoginDetail] = useState({
     email:'',
@@ -29,7 +30,7 @@ const nevigate = useNavigate();
 const  sendData = async (e) => {
     e.preventDefault();
   try {
-      fetch("https://glorious-dog-sweatpants.cyclic.app/login", {
+      fetch(myUrl, {
       method:"POST",
       headers:{
         'Content-type':'application/json; charset=UTF-8'
