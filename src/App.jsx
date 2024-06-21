@@ -23,7 +23,7 @@ function App() {
  const [bg,setBg] = useState({theme:"light"});
  const [cookies, removeCookie] = useCookies([]);
 
-//  const nevigate = useNavigate();
+ const nevigate = useNavigate();
 //  const dispatch = useDispatch();
 //  const select = useSelector((state) => {
 //   return state.addIoSlice[0];
@@ -31,9 +31,9 @@ function App() {
 // const socket = select.io("http://localhost:5000");
 useEffect(() => {
   document.querySelector("body").setAttribute("data-theme",bg.theme);
-//   if (!cookies.jwt) {
-//     nevigate("/login");
-//   }
+  // if (!cookies.jwt) {
+  //   nevigate("/login");
+  // }
 //  else{
 //        fetch("http://localhost:5000/user",{
 //         credentials: "include"
@@ -44,13 +44,14 @@ useEffect(() => {
 }),[];
 
   return (
-    <>
-    <SettingPanele />
+<>
+     <SettingPanele />
      <Routes>
       <Route exact path='/' element={<Home />} />
     
       <Route  path='/login' element={<LoginTab />} />
-     <Route path='/reg' element={<Reguser /> } />
+      <Route path='/reg' element={<Reguser /> } />
+    
       <Route path="/posts" element={<Posts />} />
       <Route path="/users" element={<Users />} />
       <Route path="/addpost" element={<Addpost />} />
@@ -60,6 +61,8 @@ useEffect(() => {
       <Route path="/editpost" element={<EditPost />} />
       
        </Routes> 
+  
+   
     </>
   )
 }

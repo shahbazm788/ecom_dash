@@ -12,10 +12,10 @@ const [getdata,setGetData] = useState({});
 const nevigate = useNavigate();
 
   useEffect(() => {
-  //  if(cookies.jwt){
-  //     nevigate("/");
+   if(cookies.jwt){
+      nevigate("/");
      
-  //   }
+    }
   
    
   },[]);
@@ -40,7 +40,8 @@ const  sendData = async (e) => {
     
     }).then( res => res.json()).then(data => {
       if(data){
-        setCookies("jwt",data.jwt, { path: "/" });
+        // console.log(data)
+        // setCookies("jwt",data.jwt, { path: "/" });
         nevigate("/",{state:{data:data}})
      
         

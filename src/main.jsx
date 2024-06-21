@@ -13,6 +13,8 @@ import Header_bar from './components/header_bar.jsx';
 import Chat from "./components/Chat.jsx";
 import store from '../redux/store.js' 
 import { Provider } from 'react-redux' 
+import { useCookies } from "react-cookie";
+
 
 
 
@@ -20,6 +22,8 @@ import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
+
+
     <Router >
       {/* <Header /> */}
       <Provider store={store}>

@@ -28,9 +28,9 @@ const Home = () => {
 const products = useSelector(state => state.products.products);
  useEffect( () => {
 
-//     if (!cookies.jwt) {
-//       nevigate("/login");
-//     }
+    if (!cookies.jwt) {
+      nevigate("/login");
+    }
 //    else{
 //          fetch("http://localhost:5000/user",{
 //           credentials: "include"
