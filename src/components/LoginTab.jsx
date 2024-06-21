@@ -12,10 +12,10 @@ const [getdata,setGetData] = useState({});
 const nevigate = useNavigate();
 
   useEffect(() => {
-   if(cookies.jwt){
-      nevigate("/");
+  //  if(cookies.jwt){
+  //     nevigate("/");
      
-    }
+  //   }
   
    
   },[]);
@@ -35,7 +35,7 @@ const  sendData = async (e) => {
       headers:{
         'Content-type':'application/json; charset=UTF-8'
       },
-      credentials: "include",
+       credentials: "include",
       body: JSON.stringify(logindetail)
     
     }).then( res => res.json()).then(data => {
