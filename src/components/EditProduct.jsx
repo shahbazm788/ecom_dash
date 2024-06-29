@@ -5,22 +5,26 @@ import './sassFiles/addPost.scss';
 import axios from 'axios';
 import { useNavigate } from "react-router";
 import { useCookies } from "react-cookie";
-
-const AddProduct = () => {
-  const placeholder = '';
+import { useLocation } from "react-router-dom";
+const EditProduct = ({item}) => {
+  const location = useLocation();
+  console.log(location.state.item);
+ // const placeholder = '';
 const [cookies, removeCookie] = useCookies([]);
 
  const nevigate = useNavigate();
   const [editorval , setEditorval] = useState();
   const [file,setFile] = useState();
   const [fData,setFdata] = useState({
-    title:'',
-    category:'',
-    sub_category:"",
-    editorval:'',
-    supplier:"",
-    price:"",
-    product_location:"",
+    _id:location.state.item._id,
+    title:location.state.item.title,
+    category:location.state.item.category,
+    sub_category:location.state.item.sub_category,
+    editorval:location.state.item.description,
+    supplier:location.state.item.supplier,
+    price:location.state.item.price,
+    product_location:location.state.item.product_location,
+    imageUrl:location.state.item.imageUrl,
   });
 	const editor = useRef(null);
  
@@ -41,6 +45,7 @@ const [cookies, removeCookie] = useCookies([]);
 
  
 const fd = new FormData();
+fd.append('_id',fData._id);
 fd.append('title',fData.title);
 fd.append('category',fData.category);
 fd.append('sub_category',fData.sub_category);
@@ -54,7 +59,7 @@ fd.append('file',file);
 
 
 
-axios.post('http://localhost:5000/products/create',fd,{
+axios.post('http://localhost:5000/products/update',fd,{
 //   onDownloadProgress: (ProgressEvent) => {console.log(ProgressEvent.progress*100)},
 //   headers:{
 //     "Custom-headers":"value"
@@ -71,8 +76,8 @@ withCredentials: true
  }
  
 useEffect(() => {
-  removeCookie("jwt");
- //removeCookie(cookie-name)
+
+ 
    if (!cookies.jwt) {
   nevigate("/login");
   }
@@ -90,7 +95,9 @@ useEffect(() => {
       <Form  onSubmit={(e) => handeleSubmit(e)} id='myForm'> 
       <Form.Group controlId="">
             <Form.Label>Add Post Heading</Form.Label>
-            <Form.Control type="text" placeholder="Add Post Heading..." name='post_heading' 
+            <Form.Control type="text" placeholder="Add Post Heading..." 
+            value={fData.title}
+            name='post_heading' 
             onChange={e => {
               setFdata({...fData,title:e.target.value})
             }} 
@@ -100,7 +107,9 @@ useEffect(() => {
             <Col sm={6} >
               <Form.Group controlId="">
               <Form.Label>Add Category</Form.Label>
-              <Form.Control type="text" placeholder="Add Category..." name='post_category' 
+              <Form.Control type="text" placeholder="Add Category..." 
+              value={fData.category}
+              name='post_category' 
               onChange={e => {
                 setFdata({...fData,category:e.target.value})
               }} 
@@ -110,7 +119,8 @@ useEffect(() => {
             <Col sm={6} >
               <Form.Group controlId="">
               <Form.Label>Add sub category</Form.Label>
-              <Form.Control type="text" placeholder="Add sub category..." name='sub_category' 
+              <Form.Control type="text" placeholder="Add sub category..." value={fData.sub_category}
+              name='sub_category' 
               onChange={e => {
                 setFdata({...fData,sub_category:e.target.value})
               }} 
@@ -123,7 +133,9 @@ useEffect(() => {
             <Col sm={6} >
               <Form.Group controlId="">
               <Form.Label>Add supplier</Form.Label>
-              <Form.Control type="text" placeholder="Add supplier..." name='supplier' 
+              <Form.Control type="text" placeholder="Add supplier..." 
+              value={fData.supplier}
+              name='supplier' 
               onChange={e => {
                 setFdata({...fData,supplier:e.target.value})
               }} 
@@ -134,6 +146,7 @@ useEffect(() => {
               <Form.Group controlId="">
               <Form.Label>Add price</Form.Label>
               <Form.Control type="text" placeholder="Add price..." name='price' 
+             value={fData.price}
               onChange={e => {
                 setFdata({...fData,price:e.target.value})
               }} 
@@ -145,6 +158,7 @@ useEffect(() => {
           <Form.Group controlId="">
               <Form.Label>Add product location</Form.Label>
               <Form.Control type="text" placeholder="Add product location..." name='product_location' 
+          value={fData.location}
               onChange={e => {
                 setFdata({...fData,product_location:e.target.value})
               }} 
@@ -162,6 +176,7 @@ useEffect(() => {
             ref={editor}
             // config={config}
             // onChange={content => setEditorval(content)}
+            value={fData.editorval}
             onChange={content => {
               setFdata({...fData,editorval:content})
             }}
@@ -177,4 +192,4 @@ useEffect(() => {
     </>
 	);
 };
-export default AddProduct;
+export default EditProduct;

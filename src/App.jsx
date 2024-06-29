@@ -12,12 +12,13 @@ import Addpost from './components/addpost';
 import Users from './components/users';
 import SettingPanele from './components/settingPanele';
 // import SendPost from './components/SendPost';
-import EditPost from './components/EditPost';
+import EditProduct from './components/EditProduct.jsx';
 import { useNavigate } from "react-router";
 import { useCookies } from "react-cookie";
 import Reguser from './components/reguser';
 // import { io } from 'socket.io-client';
 import AddProduct from './components/AddProduct.jsx';
+import Products from './components/Products.jsx';
 
 function App() {
  const [bg,setBg] = useState({theme:"light"});
@@ -52,13 +53,13 @@ useEffect(() => {
       <Route  path='/login' element={<LoginTab />} />
       <Route path='/reg' element={<Reguser /> } />
     
-      <Route path="/posts" element={<Posts />} />
+      <Route path="/products" element={<Products />} />
       <Route path="/users" element={<Users />} />
       <Route path="/addpost" element={<Addpost />} />
       <Route path="/addproduct" element={<AddProduct />} />
 
       {/* <Route path="/sendPost" element={<SendPost />} /> */}
-      <Route path="/editpost" element={<EditPost />} />
+      <Route path="/editproduct" element={<EditProduct />} />
       
        </Routes> 
   

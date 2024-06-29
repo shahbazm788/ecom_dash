@@ -13,8 +13,8 @@ const Usersdata = (usersData) => {
             return <>
                  <div >
                   <Row key={i}>
-                  <Col sm={3}>{item.userName}</Col>
-                  <Col sm={3}>{item.userEmail}</Col>
+                  <Col sm={3}>{item.name}</Col>
+                  <Col sm={3}>{item.email}</Col>
                   <Col sm={2}><img id='user_img' src={`../../img/${item.userDP}`} alt='img' /></Col>
                   <Col sm={2}>{item.userRole}</Col>
                   <Col sm={2}>

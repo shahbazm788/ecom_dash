@@ -40,7 +40,7 @@ const Sidebar = () => {
     <LinkContainer to="/" >
       <Link className='side_link'  onClick={showRightArow}><FaHome /> Home</Link>
     </LinkContainer>
-    <LinkContainer to="/posts" >
+    <LinkContainer to="/products" >
       <Link className='side_link' onClick={showRightArow}><FaFileAlt /> Products </Link>
     </LinkContainer>
     <LinkContainer to="/users" >

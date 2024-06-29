@@ -11,14 +11,7 @@ const LoginTab = () => {
 const [getdata,setGetData] = useState({});
 const nevigate = useNavigate();
 
-  useEffect(() => {
-   if(cookies.jwt){
-      nevigate("/");
-     
-    }
   
-   
-  },[]);
 const myUrl = "http://localhost:5000/admin/login";
 
   const [logindetail,setLoginDetail] = useState({
@@ -40,11 +33,8 @@ const  sendData = async (e) => {
     
     }).then( res => res.json()).then(data => {
       if(data){
-        // console.log(data)
-        // setCookies("jwt",data.jwt, { path: "/" });
-        nevigate("/",{state:{data:data}})
-     
-        
+       setCookies("jwt",data.jwt, { path: "/" });
+      
       }
       
     });
@@ -53,7 +43,15 @@ const  sendData = async (e) => {
   }
   
 }
-
+useEffect(() => {
+    if(cookies.jwt){
+      nevigate("/");
+    
+     
+     }
+  
+   
+  },[setCookies]);
 
   return (
     <div>

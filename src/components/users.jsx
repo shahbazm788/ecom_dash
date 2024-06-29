@@ -22,11 +22,11 @@ const [userActive,setUserActive] = useState('');
 
 
 const getData =   () => {
-  axios.get('http://localhost:5000/usersdata',{
+  axios.get('http://localhost:5000/user/alluser',{
   withCredentials:true
 }).then(res => {
   setUserData(res.data)
- 
+ console.log(res.data)
 })
 }
 
@@ -66,6 +66,7 @@ const deleteUser = (userId) => {
           </Row>
           <hr />
        </div>
+       
        <Usersdata usersData={userData} updateUser={updateUser} deleteUser={deleteUser}/>
          
           {/* <Row>
